@@ -1,0 +1,266 @@
+/* Стили для двух блоков. header и footer*/
+body {
+  background-color: #121026; /*  Задаем цвет фона страницы  */
+  /*  Другие стили для body  */
+
+header{
+    background-color: #7883a1;
+
+  .head1 {
+      display: flex; /* Включаем flexbox для контейнера */
+  }
+    
+  .foto_head {
+      flex: 20; 
+  }
+  .head2{
+     
+      flex: 80; /* Блок занимает равную долю доступного пространства */
+      margin-left: 50px;
+      
+    .name_head {
+        
+        text-align: left; /* Центрируем текст по горизонтали */
+        h1{
+          font-family: "Orelega One", serif;
+          font-weight: 500;
+          font-style: normal;
+          color:#ffffff;
+          font-size: 40px;
+        }
+    }
+    .info_head{
+        line-height: 0.2;
+        h3{
+          margin-right: 10px;
+          font-family: "Orelega One", serif;
+          font-weight: 100;
+          font-style: normal;
+          color:#ffffff;
+        }
+        p{
+          color:#ffffff;
+        }
+    }
+  }
+  
+}
+
+
+main{
+  .text_filem
+  {
+    background-color: rgb(228, 236, 250);
+    h2{
+      text-align: center; 
+      margin-right: 10px;
+      font-family: "Orelega One", serif;
+      font-weight: 100;
+      font-style: normal;
+      color:#120e25;
+      font-size: 30px;
+    }
+    p{
+      margin: 40px 40px 40px 40px;
+      color:#120e25;
+      font-size: 20px;
+    }
+  }
+
+  .director{
+    background-color: #7883a1;
+    .dt{
+      flex-direction: column;
+      h3{
+          text-align: center; 
+          font-family: "Orelega One", serif;
+          font-weight: 500;
+          font-style: normal;
+          color:#ffffff;
+          font-size: 30px;
+        }
+    } 
+    .d0{
+      display: flex;
+      
+      p{
+        margin-left: 50px;
+        text-align: left;
+        color:#ffffff; 
+        font-size: 25px;
+      }
+      img{
+        margin-left: 50px;
+      }
+      .d1 {
+        
+        flex: 25; 
+      }
+      .d2 {
+        flex: 25; 
+      }
+      .d3 {
+        flex: 25; 
+      }
+      .d4 {
+        flex: 25; 
+      }
+    }
+  }
+
+  .actors{
+    .ar{
+      background-color: rgb(228, 236, 250);
+      h3{
+        text-align: center; 
+        margin-right: 10px;
+        font-family: "Orelega One", serif;
+        font-weight: 100;
+        font-style: normal;
+        color:#120e25;
+        font-size: 30px;
+      }
+    }
+    background-color: rgb(228, 236, 250);
+
+    .acolimb{
+
+      display: flex;           /* Включаем Flexbox для контейнера */
+      flex-wrap: wrap;         /* Разрешаем перенос элементов на новую строку */
+      justify-content: space-around; /* Равномерное распределение элементов по строке */
+      width: auto;            /* Задаем ширину контейнера */
+      margin: 0 auto; 
+      p{
+        text-align: center;
+        color:#120e25;
+        font-size: 25px;
+      }        
+    
+    .a {
+      width: 25%;            /* Задаем ширину каждого элемента */
+      margin-bottom: 20px;     /* Отступ между рядами */
+      text-align: center;      /* Центрируем текст внутри элемента */
+      box-sizing: border-box;   /* Включаем box-sizing для правильного расчета размеров */
+      padding: 10px;          /* Добавляем отступы внутри элемента */
+       /* Просто для наглядности */
+    }
+
+    .a img {
+      max-width: 100%;        /* Чтобы изображение не выходило за пределы элемента */
+      height: auto;           /* Сохраняем пропорции изображения */
+      display: block;          /* Убираем лишние отступы под изображением */
+      margin: 0 auto 10px;      /* Центрируем изображение по горизонтали и добавляем отступ снизу */
+    }
+  }}
+}
+footer{
+    background-color:  #121026;
+    .f{
+    p{
+      text-align: center;
+      color:#413e57;
+    }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #313131;
+    padding: 10px;
+}
+
+
+  /* Стили для блока header. Именно для меню
+  #menu1{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  }
+  #menu1 ul{
+  position: relative;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: auto;
+  list-style: none;
+  }
+  #menu1 > ul::after{
+  display: block;
+  width: 100%;
+  height: 0px;
+  clear: both;
+  content: " ";
+  }
+  #menu1 ul li{
+  position: relative;
+  display: block;
+  float: left;
+  width: auto;
+  height: auto;
+  }
+  #menu1 ul li a{
+  display: block;
+  padding: 9px 25px 0px 25px;
+  font-size: 14px;
+  line-height: 1.3em;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 36px;
+  box-sizing: border-box;
+  color: white;
+  }
+  
+  /* Стили для блока main.
+  main {
+    padding: 10px;
+    background-color: silver;
+  }
+  
+  .post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  .post img {
+    margin: 20px;
+  }
+  
+  /* Стили для блока footer. Так же тут таблица
+  .footer-columns {
+    display: flex;
+  }
+  
+  .footer-column {
+    flex: 50%;
+    margin: 20px;
+  }
+  */
