@@ -1,4 +1,4 @@
-name: Deploy Static Site to GitHub Pages
+name:  Deploy Static Site to Netlify
 
 # Триггер: когда запускать этот workflow
 on:
@@ -19,27 +19,19 @@ jobs:
         run: |
           chmod +x test_script.sh # Делаем скрипт исполняемым
           ./test_script.sh         # Запускаем наш скрипт тестирования
-
+          echo "Tests completed."
   deploy:
     needs: build_and_test # Запускать только после успешного завершения build_and_test
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Требуются права на запись в репозиторий для GitHub Pages
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@v1.1.0
         with:
-          fetch-depth: 0 # Получаем всю историю коммитов для развертывания
-
-      # GitHub Actions предоставляет готовый action для развертывания на GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4 # Используем готовый action для развертывания
-        with:
-          artifact_path: '.' # Путь к файлам, которые нужно развернуть
-
-    # Условия запуска
-    only:
-      branches:
-        - main # Развертывать только из ветки main
-    # Указываем, что этот job запускается только если предыдущий job успешен
+          args: deploy --prod --dir=.
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
     if: needs.build_and_test.result == 'success'
