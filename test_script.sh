@@ -1,6 +1,11 @@
 #!/bin/bash
 echo "Starting web app tests..."
-
+if [ -f "index.html" ] && [ -f "style.css" ]; then
+    echo "Test 1: HTML and CSS files exist - PASSED"
+else
+    echo "Test 1: HTML or CSS files are missing - FAILED"
+    exit 1 # Завершаем скрипт с ошибкой
+fi
 if grep -q '<link rel="stylesheet" href="style.css">' index.html; then
     echo "Test 2: CSS file linked correctly in index.html - PASSED"
 else
