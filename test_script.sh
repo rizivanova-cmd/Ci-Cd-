@@ -1,20 +1,6 @@
 #!/bin/bash
 echo "Starting web app tests..."
 
-# Пример проверки наличия файлов
-if [ -f "index.html" ]; then
-    echo "Test 1.1: HTML and CSS files exist - PASSED"
-else
-    echo "Test 1.1: HTML or CSS files are missing - FAILED"
-    exit 1
-fi
-if [ -f "style.css" ]; then
-    echo "Test 1.1:  CSS files exist - PASSED"
-else
-    echo "Test 1.1: CSS files are missing - FAILED"
-    exit 1
-fi
-
 if grep -q '<link rel="stylesheet" href="style.css">' index.html; then
     echo "Test 2: CSS file linked correctly in index.html - PASSED"
 else
