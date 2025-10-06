@@ -30,7 +30,8 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
-          args: deploy --prod --dir=.
+          publish-dir: '.' # Указывает директорию с файлами для развертывания ('.' - корень репозитория)
+          production-deploy: true # Указывает, что это продакшн-развертывание
         env:
           NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
           NETLIFY_SITE_ID: ${{secrets.NETLIFY_SITE_ID}}
